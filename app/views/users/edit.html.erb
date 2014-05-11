@@ -1,0 +1,41 @@
+<h1>Editing user</h1>
+<%= form_for(@user) do |f| %>
+    <% if !session[:user_logged_in].nil? and User.find_by_id(session[:user_logged_in]).usertype == 0  %>
+        <div class="field">
+          <%= f.label :fname, value="First Name:" %><br />
+          <%= f.text_field :fname %>
+        </div>
+        <div class="field">
+          <%= f.label :lname, value="Last Name:" %><br />
+          <%= f.text_field :lname %>
+        </div>
+        <div class="field">
+          <%= f.label :email, value="Email Address:" %><br />
+          <%= f.text_field :email %>
+        </div>
+    <% end %>
+    <% if !session[:user_logged_in].nil? and User.find_by_id(session[:user_logged_in]).usertype == 1 %>
+        <div class="field">
+          <%= f.label :fname, value="First Name:" %><br />
+          <%= f.text_field :fname, 'disabled' => 'true'  %>
+        </div>
+        <div class="field">
+          <%= f.label :lname, value="Last Name:" %><br />
+          <%= f.text_field :lname, 'disabled' => 'true' %>
+        </div>
+        <div class="field">
+          <%= f.label :email, value="Email Address:" %><br />
+          <%= f.text_field :email, 'disabled' => 'true' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :usertype, value="Membership"%><br/>
+          <%= select(:user, :usertype, [['Member', 0], ['Admin', 1]]) %>
+        </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+

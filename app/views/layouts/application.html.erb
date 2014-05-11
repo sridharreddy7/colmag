@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Magazine</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <style type="text/css">
+      body
+      {
+          background-color:"red";
+		  background-image:url('/assets/awesome.png');
+		  background-repeat:no-repeat;
+		    background-size:cover;
+		   
+			
+		  
+      }
+      #maincontent
+      {
+          margin-left: 3%;
+          margin-top: 5%;
+          margin-right: 10%;
+         
+		 
+      }
+  </style>
+</head>
+<body>
+<h1 align="center"><font color="B45F04" size="20"> <i>College Magazine</i></font> </h1>
+<div id="maincontent">
+<div>	
+  <% user_logged = session[:user_logged_in] %>
+  <% if user_logged.nil?  %>
+      <%= form_tag :controller => 'users', :action => 'login' do %>
+          <div class="field">
+            <p></p>
+          </div>
+      <% end %>
+	  
+  <% else %>
+      <%= form_tag :controller => 'users', :action => 'logout' do %>
+          <div class="field">
+            <%= submit_tag "Logout" %>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+<h2><font color="088A29"><i>Search By</i></font></h2>
+      <%= form_tag :controller => 'posts', :action => 'search', :method => 'get' do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= select_tag "search_by", options_for_select([['Content', 1],['Category',2],['User',3]], params[:search_by]) %>
+          <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<%= yield %>
+  <br/><br/>
+  <button type="button"><%= link_to 'Home', :controller => 'users', :action => 'myhome' %></button>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<%= form_for(@user) do |f| %>
+    <div class="field">
+<h3><font color="B45F04">    <i>  <%= f.label :fname, value="First Name:" %><br /></i></h3>
+      <%= f.text_field :fname %>
+    </div>
+    <div class="field">
+  <h3><font color="B45F04">   <i><%= f.label :lname, value="Last Name:" %><br /></i></h3>
+      <%= f.text_field :lname %>
+    </div>
+    <div class="field">
+  <h3><font color="B45F04">     <i><%= f.label :email, value="Email Address:" %><br /></i></h3>
+      <%= f.text_field :email %>
+    </div>
+
+   <div class="field">
+   <h3><font color="B45F04">  <i> <%= f.label :password, value="Password"%> <br/></i></h3>
+     <%= f.password_field :password %>
+   </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

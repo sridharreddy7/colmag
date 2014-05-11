@@ -1,0 +1,10 @@
+
+<ul>
+<%
+   @post.each do |f|
+%>
+<li>
+	
+ <button type="button">	<%= link_to f.title, :action => 'show',:id => f.id %></li></button>
+<% end %>
+</ul>
