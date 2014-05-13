@@ -33409,3 +33409,90 @@ Migrating to CreateVotes (20120907041231)
  AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
  ORDER BY i.relname
 
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-13 14:41:50 +0530
+Processing by UsersController#myhome as HTML
+  [1m[36mUser Load (27.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/myhome.html.erb within layouts/application (876.2ms)
+Completed 200 OK in 1093ms (Views: 377.6ms | ActiveRecord: 714.4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-13 14:41:53 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-13 14:41:53 +0530
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/awesome.png" for 127.0.0.1 at 2014-05-13 14:41:53 +0530
+Served asset /awesome.png - 304 Not Modified (72ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-05-13 14:41:54 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (137.3ms)
+  Rendered users/new.html.erb within layouts/application (201.7ms)
+Completed 200 OK in 243ms (Views: 236.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-13 14:41:54 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-13 14:41:54 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-05-13 14:43:35 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (49.2ms)
+  Rendered users/new.html.erb within layouts/application (87.7ms)
+Completed 200 OK in 422ms (Views: 197.0ms | ActiveRecord: 180.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-13 14:43:36 +0530
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-13 14:43:36 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2014-05-13 14:43:50 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO8cSe9A0UV0G5fd1woS7vC7o6vj8ghLI4vmv3V8u+I=", "email"=>"sridhar.roger@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (137.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'sridhar.roger@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 137.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-13 14:43:50 +0530
+Processing by UsersController#myhome as HTML
+  [1m[35mUser Load (52.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/myhome.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 141ms (Views: 88.8ms | ActiveRecord: 52.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-13 14:43:50 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-13 14:43:50 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-05-13 14:43:50 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 73ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-13 14:43:51 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-13 14:43:51 +0530
+Served asset /application.js - 304 Not Modified (0ms)
